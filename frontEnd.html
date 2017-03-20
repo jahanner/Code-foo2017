@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>Code-foo 2017</title>
+    <link rel="stylesheet" type="text/css" href="frontEnd.css"/>
+    <script src='jquery-3.1.1.js'></script>
+</head>
+<body>
+    <div id='table'>
+        <div class='buttons'>
+            <span class='videoButton' onclick ="apiCaller('videos')">Videos</span>
+            <span class='articleButton' onclick ="apiCaller('articles')">Articles</span>
+        </div>
+        <div id='divDump'>
+        </div>
+        <a class='button' onclick="startIndex()" id='pagination'>See more...</a>
+        <a class='button' onclick="firstIndex()" id='backToTop'>Back to top^</a>
+    </div>
+
+    <script type='text/javascript' src='frontEnd.js'>
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+    width: 1000px;
+    font-family: sans-serif;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+p {
+    text-align: center;
+    font-size: 17px;
+    color: blue;
+}
+
+.img {
+    height: 600px;
+    width: 500px;
+}
+.kong {
+    display: block;
+    margin: 0 auto;
+}
+.lady{
+    display: block;
+    margin: 0 auto;
+}
