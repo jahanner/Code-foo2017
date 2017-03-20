@@ -19,6 +19,7 @@ var tiles_in_hand = 6;
 //variable. If cell already has input, drop down menu does not exist at that location. If move is possible replace empty cell in table with
 //selection. There would be a drop down menu to end the turn. When turn is done, auto fill tiles_in_hand back to 6 with randomly selected
 //tiles from numTiles. AI would then randomly place tile moves that are legal or trade from numTiles if there are no moves.
+//I used code from 'Phrogz' on stackoverflow here and was going to manipulate it.
 
 // var lastClicked;
 // var grid = clickableGrid(10,10,function(el,row,col,i){
