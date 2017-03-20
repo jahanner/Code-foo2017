@@ -84,15 +84,16 @@ function boggle(grid, x, y, chain, solutions) {
     return solutions;
 }
 //create 2-D array
+// var grid = [[3,9,9],[9,3,9],[9,9,3]];
 var grid = [];
 for (var row = 0 ; row < 3; row++) {
     grid[row] = [];
     for (var col = 0; col < 3; col++) {
         grid[row][col] = Math.floor(Math.random() * 10);
     }
-    console.log(grid[row]);
 }
 //set empty array for chain and solutions
+console.log(grid);
 console.log(boggle(grid, 0, 0, [], []));
 //I can certainly make a version with a larger grid, though slight modifications to the program would need to be made, but the time to
 //run the program would increase significanly with every increased grid size.

@@ -28,8 +28,8 @@ body {
     border-right-color: black;
 }
 .shownDiv {
-    width: 350px;
-    height: 50px;
+    width: 360px;
+    height: 55px;
     overflow: hidden;
     border-bottom:1px dotted #ccc;
     background:#fff;
@@ -58,6 +58,7 @@ body {
     padding-top: 5px;
     height: 15px;
     overflow: hidden;
+
 }
 .textDiv {
     display: inline-table;
@@ -130,7 +131,7 @@ body {
     height: 15px;
     background: transparent;
     padding: 10px;
-    margin-left: 175px;
+    margin-left: 170px;
     color: #777;
     font-weight: bold;
     font-size: 15px;
