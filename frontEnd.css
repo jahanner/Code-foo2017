@@ -33,10 +33,26 @@ body {
     overflow: hidden;
     border-bottom:1px dotted #ccc;
     background:#fff;
+    position: relative;
 }
-.shownDiv.hovered{
+.redBoxDiv {
+    display: none;
+    height: 30px;
+    width: 20px;
+    background-color: red;
+    position: absolute;
+    top: 14px;
+    left: -10px;
+    overflow: visible;
+
+}
+.shownDiv:hover{
     background-color: #DCDCDC;
     cursor: default;
+}
+.shownDiv:hover .redBoxDiv {
+    overflow: visible;
+    display: block;
 }
 .numDiv {
     float: left;

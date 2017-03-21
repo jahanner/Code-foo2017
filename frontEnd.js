@@ -38,6 +38,8 @@ function apiCaller(type) {
                 //create div for each and give them class names.
                shownDiv = document.createElement("div");
                    shownDiv.className='shownDiv';
+               redBoxDiv = document.createElement('div');
+                   redBoxDiv.className = 'redBoxDiv';
                hiddenDiv = document.createElement("div");
                    hiddenDiv.className='hiddenDiv';
                    hiddenDiv.style.display='none';
@@ -58,14 +60,14 @@ function apiCaller(type) {
 
                shownDiv.id = "item # " + (i + 1);
                 //so I can manipulate div on hover
-                $(function() {
-                $('.shownDiv').hover(function(){
-                    $(this).addClass('hovered');
-                },
-                function(){
-                    $(this).removeClass('hovered');
-                });
-            });
+            //     $(function() {
+            //     $('.shownDiv').hover(function(){
+            //         $(this).addClass('hovered');
+            //     },
+            //     function(){
+            //         $(this).removeClass('hovered');
+            //     });
+            // });
             //so I can change color and underline on click and hover
                if (type ==='articles') {
                    $(".articleButton").css("background-color", "#cc0000");
@@ -106,7 +108,7 @@ function apiCaller(type) {
                    ign.append("GO TO IGN");
                    textDiv.append(response.data[i].metadata.subHeadline);
                    numDiv.append(index+i+1);
-                   shownDiv.append(numDiv, titleDiv, textDiv, date);
+                   shownDiv.append(redBoxDiv, numDiv, titleDiv, textDiv, date);
                    document.getElementById("divDump").appendChild(shownDiv);
                    var img = document.createElement('img');
                    img.src =  response.data[i].thumbnails[1].url;
@@ -138,7 +140,7 @@ function apiCaller(type) {
                    }
                    minSec += minutes +":" + seconds;
                    lengthDiv.append(minSec);
-                   shownDiv.append(numDiv, titleDiv, lengthDiv, textDiv);
+                   shownDiv.append(redBoxDiv, numDiv, titleDiv, lengthDiv, textDiv);
 
                    document.getElementById("divDump").appendChild(shownDiv);
                    var img = document.createElement('img');

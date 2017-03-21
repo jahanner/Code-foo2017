@@ -49,9 +49,10 @@ function possibleMoves(grid, x, y, chain) {
 function boggle(grid, x, y, chain, solutions) {
     var chain2 = chain.slice(0);
     chain2.push([x,y]);
+    chain2.sort();
     //Determine if solution
-    if (chain2.length > 1 && findValueGivenChain(grid, chain2) == 9){
-        solutions.push(chain2);
+    if (chain2.length > 1 && findValueGivenChain(grid, chain2) == 9 && !solutions.includes(chain2)){
+            solutions.push(chain2);
     }
     //if sum of chain < 9, find available positions
     // Then check if you've been to that position already
@@ -84,7 +85,6 @@ function boggle(grid, x, y, chain, solutions) {
     return solutions;
 }
 //create 2-D array
-// var grid = [[3,9,9],[9,3,9],[9,9,3]];
 var grid = [];
 for (var row = 0 ; row < 3; row++) {
     grid[row] = [];
@@ -94,6 +94,21 @@ for (var row = 0 ; row < 3; row++) {
 }
 //set empty array for chain and solutions
 console.log(grid);
-console.log(boggle(grid, 0, 0, [], []));
+var solutions = []
+for (var ix = 0; ix < 9; ix++){
+    var row = ix % 3, col = parseInt(ix / 3);
+    solutions = boggle(grid, row, col, [], solutions);
+}
+//filter duplicates
+var tmp = [];
+//thanks to 'baao' on stackoverflow
+var uniqueSolutions = solutions.filter(function (v) {
+    if (tmp.indexOf(v.toString()) < 0) {
+        tmp.push(v.toString());
+        return v;
+    }
+});
+
+console.log(uniqueSolutions);
 //I can certainly make a version with a larger grid, though slight modifications to the program would need to be made, but the time to
 //run the program would increase significanly with every increased grid size.
